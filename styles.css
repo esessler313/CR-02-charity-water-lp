@@ -12,38 +12,9 @@ body {
   background-color: #8BD1CB;
 }
 
-/* Left section styles */
-.left-section {
-  flex: 1;
-  padding: 40px 32px 40px 48px;
-  background-color: #8BD1CB;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-/* Logo styles */
-.logo {
-  display: flex;
-  align-items: center;
-  margin-bottom: 32px;
-}
-.logo-img {
-  width: 48px;
-  height: 48px;
-  margin-right: 12px;
-}
-.logo-text {
-  font-family: 'Avenir', Arial, sans-serif; /* Use Avenir for all other text */
-  font-weight: 700;
-  font-size: 32px;
-  color: #222;
-  letter-spacing: 1px;
-}
-
-/* Main headline styles */
+/* Headline styles for all h1 and h2 */
 h1, h2 {
-  font-family: 'Proxima Nova', Arial, sans-serif; /* Use Proxima Nova for all headlines */
+  font-family: 'Proxima Nova', Arial, sans-serif;
   font-size: 38px;
   font-weight: 700;
   color: #fff;
@@ -51,9 +22,9 @@ h1, h2 {
   line-height: 1.15;
 }
 
-/* Paragraph styles */
+/* Paragraph and general text styles */
 p, .impact-text p, .donation-section p, .cta-button, .donate-btn, .logo-text {
-  font-family: 'Avenir', Arial, sans-serif; /* Use Avenir for all other text */
+  font-family: 'Avenir', Arial, sans-serif;
   font-size: 18px;
   color: #ffffff;
   margin-bottom: 40px;
@@ -171,13 +142,136 @@ p, .impact-text p, .donation-section p, .cta-button, .donate-btn, .logo-text {
   font-size: 22px;
 }
 
+/* Impact Story Section */
+.impact-story {
+  background: #8BD1CB;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  min-height: 0;
+  height: auto;
+}
+
+.impact-container {
+  display: flex;
+  align-items: stretch;
+  width: 100vw;
+  height: 100%;
+  position: relative;
+  left: 0;
+}
+
+.impact-img {
+  width: 16vw;        /* Make the impact photo smaller */
+  min-width: 80px;    /* Smaller minimum width */
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0 12px 12px 0;
+  margin-right: 24px;
+  margin-left: 0;
+  display: block;
+  position: relative;
+  left: 0;
+  bottom: 0;
+}
+
+.impact-text h2 {
+  font-family: 'Proxima Nova', Arial, sans-serif;
+  font-size: 24px;
+  color: #000;
+  margin-bottom: 10px;
+}
+.impact-text p {
+  font-family: 'Avenir', Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+}
+
+/* Donation Section */
+.donation-section {
+  background: #FFC907;
+  text-align: center;
+  padding: 48px 16px 56px 16px; /* More space for a professional look */
+  box-shadow: 0 -6px 16px -8px rgba(0,0,0,0.12);
+  margin-top: 0;
+  border-radius: 0 0 16px 16px; /* Rounded bottom corners */
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.donation-section h2 {
+  font-family: 'Proxima Nova', Arial, sans-serif;
+  font-size: 32px;
+  color: #222;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+
+.donation-section p {
+  font-family: 'Avenir', Arial, sans-serif;
+  font-size: 20px;
+  color: #222;
+  margin-bottom: 36px;
+  text-align: center;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Professional CTA button style */
+.donate-btn {
+  background-color: #2E9DF7;
+  color: #fff;
+  font-size: 24px;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
+  padding: 20px 60px;
+  border: none;
+  border-radius: 28px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px -4px rgba(46,157,247,0.18);
+  transition: background 0.2s, transform 0.2s;
+  margin-top: 8px;
+  margin-bottom: 0;
+  letter-spacing: 1px;
+}
+
+.donate-btn:hover {
+  background-color: #217dc1;
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Black box beneath the impact photo and donation box */
+.black-footer {
+  width: 100vw;
+  height: 80px; /* Adjust height as needed */
+  background: #000;
+  margin: 0;
+  padding: 0;
+}
+
+/* Responsive for impact story */
+@media (max-width: 700px) {
+  .impact-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .impact-img {
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+}
+
 /* Responsive: Make text and hero smaller on small screens, and show the whole image */
 @media (max-width: 900px) {
   .hero-bg {
     min-height: 50vh;
     height: 60vh;
-    background-size: contain; /* Show the whole image, no cropping */
-    background-position: top center; /* Keep the top in view */
+    background-size: contain;
+    background-position: top center;
     background-color: #222;
   }
   .hero-content h1 {
@@ -197,7 +291,7 @@ p, .impact-text p, .donation-section p, .cta-button, .donate-btn, .logo-text {
     min-height: 40vh;
     height: 50vh;
     background-size: contain;
-    background-position: top center; /* Keep the top in view */
+    background-position: top center;
     background-color: #222;
   }
   .hero-content h1 {
@@ -207,92 +301,7 @@ p, .impact-text p, .donation-section p, .cta-button, .donate-btn, .logo-text {
     font-size: 12px;
   }
 }
-
-/* Responsive styles for smaller screens */
-@media (max-width: 900px) {
-  .cta-button {
-    font-size: 24px;
-    padding: 24px 20px;
-    width: 100%;
-  }
-  h1 {
-    font-size: 28px;
-  }
-  .logo-text {
-    font-size: 24px;
-  }
-  .logo-img {
-    width: 32px;
-    height: 32px;
-  }
-  .left-section {
-    padding: 24px 12px 24px 16px;
-  }
-}
-
-@media (max-width: 768px) {
-  body {
-    flex-direction: column;
-  }
-  .divider {
-    display: none;
-  }
-  .right-section {
-    height: 300px;
-    min-height: 200px;
-  }
-  .right-section img {
-    height: 300px;
-    min-height: 200px;
-    border-left: none;
-  }
-}
-
-/* Impact Story Section */
-.impact-story {
-  background: #8BD1CB;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  height: 220px;
-}
-
-.impact-container {
-  display: flex;
-  align-items: stretch;
-  max-width: 800px;
-  margin: 0;
-  height: 100%;
-  width: 100%; /* Make container fill the section width */
-}
-.impact-img {
-  width: 220px; /* Make image wider to reach the left edge */
-  height: 100%;
-  object-fit: cover;
-  border-radius: 0 12px 12px 0; /* Only round the right corners */
-  margin-right: 24px;
-  margin-left: 0; /* No margin on the left */
-}
-.impact-text h2 {
-  font-family: 'Proxima Nova', Arial, sans-serif; /* Use Proxima Nova for all headlines */
-  font-size: 24px;
-  color: #000; /* Changed from #2E9DF7 to black */
-  margin-bottom: 10px;
-}
-.impact-text p {
-  font-family: 'Avenir', Arial, sans-serif; /* Use Avenir for all other text */
-  font-size: 16px;
-  color: #333;
-  margin: 0;
-}
-
-/* Donation Section */
-.donation-section {
-  background: #FFC907;
-  text-align: center;
-  padding: 40px 16px;
-  border-top: none; /* Remove solid line */
-  box-shadow: 0 -6px 16px -8px rgba(0,0,0,0.12); /* Soft shadow divider above */
+  margin-top: 0; /* Ensure no gap above */
 }
 .donation-section h2 {
   font-family: 'Proxima Nova', Arial, sans-serif; /* Use Proxima Nova for all headlines */
@@ -305,6 +314,7 @@ p, .impact-text p, .donation-section p, .cta-button, .donate-btn, .logo-text {
   font-size: 18px;
   color: #222;
   margin-bottom: 32px;
+  text-align: center; /* Center the text under Make a Difference */
 }
 .donate-btn {
   background-color: #2E9DF7;
@@ -330,6 +340,17 @@ p, .impact-text p, .donation-section p, .cta-button, .donate-btn, .logo-text {
   }
   .impact-img {
     margin-right: 0;
+    margin-bottom: 16px;
+  }
+}
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .impact-img {
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+}
     margin-bottom: 16px;
   }
 }
